@@ -1,4 +1,4 @@
-require_relative 'concerns/twilio_actions'
+require_relative "concerns/twilio_actions"
 
 module Fonelator
   class WebhooksController < ApplicationController
