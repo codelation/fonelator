@@ -2,7 +2,7 @@
 <Response>
   <Dial>
     <% if ENV["TWILIO_FORWARD_SIP"] %>
-      <Sip username="<%= TWILIO_FORWARD_SIP_USERNAME %>" password="<%= TWILIO_FORWARD_SIP_PASSWORD %>">
+      <Sip username="<%= ENV['TWILIO_FORWARD_SIP_USERNAME'] %>" password="<%= ENV['TWILIO_FORWARD_SIP_PASSWORD'] %>">
         <%= ENV["TWILIO_FORWARD_SIP"] %>
       </Sip>
     <% else %>
