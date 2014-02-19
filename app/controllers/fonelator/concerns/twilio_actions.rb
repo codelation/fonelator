@@ -6,7 +6,7 @@ module Fonelator
     end
     
     def twilio_voice
-      if params[:AccountSID] == Fonelator::Config::twilio_account_sid
+      if params[:AccountSid] == Fonelator::Config::twilio_account_sid
         response = Twilio::TwiML::Response.new do |r|
           r.Dial do |d|
             d.Number ENV['TWILIO_FORWARD_NUMBER']
