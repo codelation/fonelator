@@ -7,8 +7,8 @@ require "fonelator/version"
 Gem::Specification.new do |s|
   s.name        = "fonelator"
   s.version     = Fonelator::VERSION
-  s.authors     = ["Matthew Sullivan"]
-  s.email       = ["msull92@gmail.com"]
+  s.authors     = ["Matthew Sullivan", "Brian Pattison"]
+  s.email       = ["msull92@gmail.com", "brian@brianpattison.com"]
   s.homepage    = "http://github.com/81designs/fonelator"
   s.summary     = "An automated phone answering brain."
   s.description = "An automated phone answering brain."
