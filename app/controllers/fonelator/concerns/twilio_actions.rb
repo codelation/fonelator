@@ -21,21 +21,25 @@ module Fonelator
         number = params[:Digits].to_s.gsub(/\D/, "")
       end
       case number.length
-      when 12 # +17013334444 -> +17013334444
+      when "+#{Fonelator::Config.default_country_code}#{Fonelator::Config.default_area_code}3334444".length
+        # +17013334444 -> +17013334444
         number
-      when 11 #  17013334444 -> +17013334444
+      when "#{Fonelator::Config.default_country_code}#{Fonelator::Config.default_area_code}3334444".length
+        # 17013334444 -> +17013334444
         "+#{number}"
-      when 10 #   7013334444 -> +17013334444
-        "+1#{number}"
-      when 7  #      3334444 -> +17013334444
-        "+1701#{number}"
+      when "#{Fonelator::Config.default_area_code}3334444".length
+        # 7013334444 -> +17013334444
+        "+#{Fonelator::Config.default_country_code}#{number}"
+      when 7
+        # 3334444 -> +17013334444
+        "+#{Fonelator::Config.default_country_code}#{Fonelator::Config.default_area_code}#{number}"
       else
         nil
       end
     end
-  
+    
     def twilio_verify_sid
-      if params[:AccountSid] != Fonelator::Config::twilio_account_sid
+      if params[:AccountSid] != Fonelator::Config.twilio_account_sid
         raise "Account SID didn't match the configured account."
       end
     end
