@@ -5,10 +5,10 @@
       <Number><%= @outgoing_number %></Number>
     </Dial>
   <% else %>
-    <Say>Codelators. Mount up!</Say>
+    <Say voice="woman">Codelators. Mount up!</Say>
     <Pause />
-    <Gather>
-      <Say>Please enter the number you would like to call and then press pound.</Say>
+    <Gather method="POST" action="/fonelator/webhooks/twilio_voice_out">
+      <Say voice="woman">Please enter the number you would like to call and then press pound.</Say>
     </Gather>
   <% end %>
 </Response>
