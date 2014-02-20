@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial>
+    <% if ENV["TWILIO_FORWARD_SIP"] %>
+      <Sip><%= ENV["TWILIO_FORWARD_SIP"] %></Sip>
+    <% else %>
+      <Number><%= ENV["TWILIO_FORWARD_NUMBER"] %></Number>
+    <% end %>
+  </Dial>
+</Response>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial>
+    <% if @outgoing_number %>
+      <Number><%= @outgoing_number %></Number>
+    <% else %>
+      <Say>Codelators. Mount up!</Say>
+      <Gather>
+        <Say>Please enter the number you would like to call and then press pound.</Say>
+      </Gather>
+    <% end %>
+  </Dial>
+</Response>
