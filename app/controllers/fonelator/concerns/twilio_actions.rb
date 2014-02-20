@@ -18,7 +18,7 @@ module Fonelator
     def twilio_outgoing_number
       # Use the number dialed or the number entered after being prompted
       number = params[:Called].to_s.gsub(/\D/, "")
-      if number.blank? && params[:Digits]
+      if number.length < 7 && params[:Digits]
         number = params[:Digits].to_s.gsub(/\D/, "")
       end
       case number.length
