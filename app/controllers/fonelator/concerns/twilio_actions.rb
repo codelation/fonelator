@@ -10,6 +10,7 @@ module Fonelator
     
     def twilio_voice_out
       @outgoing_number = twilio_outgoing_number
+      @caller_id = Fonelator::Config.twilio_number
     end
     
   private
