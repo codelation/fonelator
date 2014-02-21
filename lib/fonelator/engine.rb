@@ -1,5 +1,5 @@
-require "fonelator/config"
-require "fonelator/version"
+require_relative "config"
+require_relative "version"
 
 module Fonelator
   class Engine < ::Rails::Engine
