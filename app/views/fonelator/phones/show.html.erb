@@ -1,0 +1,6 @@
+<%= @phone.name %> - <%= @phone.number %><br/>
+Is sip? <%= @phone.is_sip %>, Is active? <%= @phone.is_active %>
+
+<p>
+  <%= link_to "List", phones_path %> | <%= link_to "Back", :back %> | <%= link_to "Edit", edit_phone_path(@phone) %>
+</p>

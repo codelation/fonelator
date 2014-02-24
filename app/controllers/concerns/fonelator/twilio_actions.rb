@@ -8,12 +8,12 @@ module Fonelator
       layout false
     end
 
-    def twilio_dial_extension
-      @phones = Fonelator::Extension.find(params[:Digits]).phones.where(is_active: true).all
+    def twilio_dial_phones
+      @active_phones = Fonelator::Extension.where(number: params[:Digits]).phones.where(is_active: true).all
     end
 
     def twilio_voice_in
-      @extensions = Fonelator::Extension.all
+      @listed_extensions = Fonelator::Extension.where(is_listed: true).all
     end
     
     def twilio_voice_out

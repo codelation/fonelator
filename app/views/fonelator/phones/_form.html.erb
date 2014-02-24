@@ -1,0 +1,35 @@
+<%= form_for @phone do |phone_form| %>
+  <% if @phone.errors.any? %>
+    <ul>
+      <% @phone.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <p>
+    <%= phone_form.label :name %>
+    <%= phone_form.text_field :name %>
+  </p>
+  <p>
+    <%= phone_form.label :number %>
+    <%= phone_form.text_field :number %>
+  </p>
+  <p>
+    <%= phone_form.label :is_sip, "Is this a SIP number?" %>
+    <%= phone_form.check_box :is_sip %>
+  </p>
+  <p>
+    <%= phone_form.label :is_active, "Is this phone active?" %>
+    <%= phone_form.check_box :is_active %>
+  </p>
+  <%= phone_form.fields_for :extensions do |extension_form| %>
+    <p>
+      <%= extension_form.label "Extensions" %>
+      <%= extension_form.autocomplete_field :extension_list, autocomplete_fonelator_extension_name_extensions_path, 'data-delimiter' => ',', multiple: true %>
+    </p>
+  <% end %>
+
+  <p>
+    <%= phone_form.submit 'Save' %>
+  </p>
+<% end %>

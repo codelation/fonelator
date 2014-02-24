@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial>
+    <% @active_phones.each do |active_phone| %>
+      <% type = active_phone.is_sip ? 'Sip' : 'Number' %>
+      <<%= type %>><%= active_phone.number %></<%= type %>>
+    <% end %>
+  </Dial>
+</Response>

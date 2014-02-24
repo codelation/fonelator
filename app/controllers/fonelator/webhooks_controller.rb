@@ -1,7 +1,6 @@
-require_relative "concerns/twilio_actions"
-
 module Fonelator
   class WebhooksController < ApplicationController
+    skip_authorization_check
     include TwilioActions
   end
 end

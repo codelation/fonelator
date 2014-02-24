@@ -1,0 +1,5 @@
+<%= render partial: 'form' %>
+
+<p>
+  <%= link_to "List", extensions_path %> | <%= link_to "Back", :back %> | <%= link_to "Delete", @extension, data: {confirm: "Are you sure?"}, method: :delete %>
+</p>

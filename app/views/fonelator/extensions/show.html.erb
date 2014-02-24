@@ -1,0 +1,10 @@
+<%= @extension.id %> - <%= @extension.name %>
+<ul>
+  <% @extension.phones do |phone| %>
+    <li><%= phone.name %> - <%= phone.number %>, is sip? <%= phone.is_sip %>, is active? <%= phone.is_active %></li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "List", extensions_path %> | <%= link_to "Back", :back %> | <%= link_to "Edit", edit_extension_path(@extension) %>
+</p>

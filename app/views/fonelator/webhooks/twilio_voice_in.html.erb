@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Gather finishOnKey="#" action="<%= twilio_dial_extension_webhooks_path %>" method="POST">
-    <Say voice="woman">Hello from everyone at Codelation! If you know your codelator's extension, dial that now followed by pound. If you don't, then here are some good choices.</Say>
-    <% @extensions.each do |extension| %>
-      <Say voice="woman">Press <%= extension.id %></Say>
+  <Gather timeout="60" finishOnKey="#" action="<%= twilio_dial_phones_webhooks_path %>" method="POST">
+    <Say voice="woman">Hello from everyone at Codelation! If you know your codelator's extension, dial that now followed by pound. If you don't know, then here are some good choices.</Say>
+    <% @listed_extensions.each do |listed_extension| %>
+      <Say voice="woman">For <%= listed_extension.name %> press <%= listed_extension.number %> followed by pound.</Say>
     <% end %>
   </Gather>
+  <Hangup/>
 </Response>
