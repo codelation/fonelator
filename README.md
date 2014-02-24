@@ -8,7 +8,7 @@ incoming and outgoing calls with [Twilio](https://www.twilio.com). It is a **BYO
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "fonelator", github: "81designs/fonelator"
+gem "fonelator", github: "codelation/fonelator"
 ```
 
 Install Fonelator's neccessary migrations:
