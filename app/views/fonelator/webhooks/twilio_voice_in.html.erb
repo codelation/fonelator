@@ -15,10 +15,10 @@
   <% if Fonelator::Config.default_forwarding_number || Fonelator::Config.default_forwarding_sip %>
     <Dial>
       <% if Fonelator::Config.default_forwarding_number %>
-        <Number><%= Fonelator::Config.default_forwarding_number] %></Number>
+        <Number><%= Fonelator::Config.default_forwarding_number %></Number>
       <% end %>
       <% if Fonelator::Config.default_forwarding_sipsip %>
-        <Sip><%= Fonelator::Config.default_forwarding_sipsip] %></Sip>
+        <Sip><%= Fonelator::Config.default_forwarding_sip %></Sip>
       <% end %>
     </Dial>
   <% else %>
