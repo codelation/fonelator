@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Gather timeout="60" finishOnKey="#" action="<%= twilio_dial_phones_webhooks_path %>" method="POST">
-    <Say voice="woman">Hello from everyone at Codelation! If you know your codelator's extension, dial that now followed by pound. If you don't know, then here are some good choices.</Say>
+  <Gather timeout="5" finishOnKey="#" action="<%= twilio_dial_phones_webhooks_path %>" method="POST">
+    <Say voice="woman">Hello from everyone at Codelation! If you know your codelator's extension, dial that now followed by pound. If you don't know, then wait and you'll be connected.</Say>
     <% @listed_extensions.each do |listed_extension| %>
       <Say voice="woman">For <%= listed_extension.name %> press <%= listed_extension.number %> followed by pound.</Say>
     <% end %>
   </Gather>
-  <Hangup/>
+  <% if ENV['FONELATOR_DEFAULT_NUMBER'] || ENV['FONELATOR_DEFAULT_SIP'] %>
+    <Dial>
+      <% if ENV['FONELATOR_DEFAULT_NUMBER'] %>
+        <Number><%= ENV['FONELATOR_DEFAULT_NUMBER'] %></Number>
+      <% end %>
+      <% if ENV['FONELATOR_DEFAULT_SIP'] %>
+        <Sip><%= ENV['FONELATOR_DEFAULT_SIP'] %></Sip>
+      <% end %>
+    </Dial>
+  <% else %>
+    <Hangup/>
+  <% end %>
 </Response>
