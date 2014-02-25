@@ -26,11 +26,13 @@ end
 Create `config/initializers/fonelator.rb`:
 
 ```ruby
-Fonelator::Config.default_country_code = 1
-Fonelator::Config.default_area_code    = 701
-Fonelator::Config.twilio_auth_token    = "Twilio Auth Token"
-Fonelator::Config.twilio_account_sid   = "Twilio Account SID"
-Fonelator::Config.twilio_number        = "Twilio phone number"
+Fonelator::Config.default_country_code      = 1
+Fonelator::Config.default_area_code         = 701
+Fonelator::Config.default_forwarding_number = "Default forwarding number"
+Fonelator::Config.default_forwarding_sip    = "Default forwarding SIP"
+Fonelator::Config.twilio_auth_token         = "Twilio Auth Token"
+Fonelator::Config.twilio_account_sid        = "Twilio Account SID"
+Fonelator::Config.twilio_number             = "Twilio phone number"
 ```
 
 Add the incoming voice webhook to your Twilio number:
