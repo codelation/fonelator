@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
   <Gather timeout="5" finishOnKey="#" action="<%= twilio_dial_phones_webhooks_path %>" method="POST">
-    <Say voice="woman">Hello from everyone at Codelation! If you know your codelator's extension, dial that now followed by pound. If you don't know, then wait and you'll be connected.</Say>
+    <Say voice="woman">
+      <% if Fonelator::Config.welcome_message %>
+        <%= Fonelator::Config.welcome_message %>
+      <% else %>
+        Thank you for using Fonelator! Please read through the documentation for instructions on how to customize your phone system.
+      <% end %>
+    </Say>
     <% @listed_extensions.each do |listed_extension| %>
       <Say voice="woman">For <%= listed_extension.name %> press <%= listed_extension.number %> followed by pound.</Say>
     <% end %>
   </Gather>
-  <% if Fonelator::Config.default_number || Fonelator::Config.default_sip %>
+  <% if Fonelator::Config.default_forwarding_number || Fonelator::Config.default_forwarding_sipsip %>
     <Dial>
-      <% if Fonelator::Config.default_number %>
-        <Number><%= Fonelator::Config.default_number] %></Number>
+      <% if Fonelator::Config.default_forwarding_number %>
+        <Number><%= Fonelator::Config.default_forwarding_number] %></Number>
       <% end %>
-      <% if Fonelator::Config.default_sip %>
-        <Sip><%= Fonelator::Config.default_sip] %></Sip>
+      <% if Fonelator::Config.default_forwarding_sipsip %>
+        <Sip><%= Fonelator::Config.default_forwarding_sipsip] %></Sip>
       <% end %>
     </Dial>
   <% else %>
