@@ -28,6 +28,8 @@ Create `config/initializers/fonelator.rb`:
 ```ruby
 Fonelator::Config.default_country_code = 1
 Fonelator::Config.default_area_code    = 701
+Fonelator::Config.default_number       = "Default number"
+Fonelator::Config.default_sip          = "Default SIP"
 Fonelator::Config.twilio_auth_token    = "Twilio Auth Token"
 Fonelator::Config.twilio_account_sid   = "Twilio Account SID"
 Fonelator::Config.twilio_number        = "Twilio phone number"

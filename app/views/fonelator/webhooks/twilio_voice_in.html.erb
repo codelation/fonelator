@@ -6,13 +6,13 @@
       <Say voice="woman">For <%= listed_extension.name %> press <%= listed_extension.number %> followed by pound.</Say>
     <% end %>
   </Gather>
-  <% if ENV['FONELATOR_DEFAULT_NUMBER'] || ENV['FONELATOR_DEFAULT_SIP'] %>
+  <% if Fonelator::Config.default_number || Fonelator::Config.default_sip %>
     <Dial>
-      <% if ENV['FONELATOR_DEFAULT_NUMBER'] %>
-        <Number><%= ENV['FONELATOR_DEFAULT_NUMBER'] %></Number>
+      <% if Fonelator::Config.default_number %>
+        <Number><%= Fonelator::Config.default_number] %></Number>
       <% end %>
-      <% if ENV['FONELATOR_DEFAULT_SIP'] %>
-        <Sip><%= ENV['FONELATOR_DEFAULT_SIP'] %></Sip>
+      <% if Fonelator::Config.default_sip %>
+        <Sip><%= Fonelator::Config.default_sip] %></Sip>
       <% end %>
     </Dial>
   <% else %>
