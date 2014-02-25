@@ -2,7 +2,6 @@ require_dependency "fonelator/application_controller"
 
 module Fonelator
   class ExtensionsController < ApplicationController
-    autocomplete :fonelator_extension, :name, class_name: "Fonelator::Extension"
     before_action :authorize_user
     before_action :set_extension, only: [:show, :edit, :update, :destroy]
     respond_to :html

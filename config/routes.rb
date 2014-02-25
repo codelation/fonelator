@@ -8,8 +8,6 @@ Fonelator::Engine.routes.draw do
       post :twilio_voice_out
     end
   end
-  resources :extensions do
-    get :autocomplete_fonelator_extension_name, :on => :collection
-  end
+  resources :extensions
   resources :phones
 end
