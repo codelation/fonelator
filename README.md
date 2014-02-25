@@ -40,6 +40,7 @@ Fonelator::Config.default_forwarding_sip    = "Default forwarding SIP"
 Fonelator::Config.twilio_auth_token         = "Twilio Auth Token"
 Fonelator::Config.twilio_account_sid        = "Twilio Account SID"
 Fonelator::Config.twilio_number             = "Twilio phone number"
+Fonelator::Config.user_class                = "User"
 ```
 
 Add the incoming voice webhook to your Twilio number:
