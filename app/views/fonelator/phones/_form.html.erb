@@ -25,7 +25,7 @@
   <%= phone_form.fields_for :extensions do |extension_form| %>
     <p>
       <%= extension_form.label "Extensions" %>
-      <%= extension_form.autocomplete_field :extension_list, autocomplete_fonelator_extension_name_extensions_path, 'data-delimiter' => ',', multiple: true %>
+      <%# TODO: Add Extensions auto-complete field %>
     </p>
   <% end %>
 

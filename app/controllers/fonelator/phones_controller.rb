@@ -19,7 +19,7 @@ module Fonelator
 
     # GET /phones/new
     def new
-      @phone = Fonelator::Phone.new()
+      @phone = Fonelator::Phone.new
     end
 
     # GET /phones/1/edit

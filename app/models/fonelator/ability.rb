@@ -4,7 +4,6 @@ module Fonelator
 
     def initialize(user)
       if user
-        puts "WAT: #{user}"
         can :manage, Fonelator::Extension
         can :manage, Fonelator::Phone
       end
