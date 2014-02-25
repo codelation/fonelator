@@ -1,5 +1,7 @@
 require_relative "config"
 require_relative "version"
+require "cancan"
+require "jquery-ui-rails"
 
 module Fonelator
   class Engine < ::Rails::Engine

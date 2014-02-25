@@ -7,6 +7,14 @@ module Fonelator
       before_filter :twilio_verify_sid
       layout false
     end
+
+    def twilio_dial_phones
+      @active_phones = Fonelator::Extension.where(number: params[:Digits]).phones.where(is_active: true).all
+    end
+
+    def twilio_voice_in
+      @listed_extensions = Fonelator::Extension.where(is_listed: true).all
+    end
     
     def twilio_voice_out
       @outgoing_number = twilio_outgoing_number

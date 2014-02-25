@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Dial>
-    <% if ENV["TWILIO_FORWARD_SIP"] %>
-      <Sip><%= ENV["TWILIO_FORWARD_SIP"] %></Sip>
-    <% else %>
-      <Number><%= ENV["TWILIO_FORWARD_NUMBER"] %></Number>
+  <Gather timeout="60" finishOnKey="#" action="<%= twilio_dial_phones_webhooks_path %>" method="POST">
+    <Say voice="woman">Hello from everyone at Codelation! If you know your codelator's extension, dial that now followed by pound. If you don't know, then here are some good choices.</Say>
+    <% @listed_extensions.each do |listed_extension| %>
+      <Say voice="woman">For <%= listed_extension.name %> press <%= listed_extension.number %> followed by pound.</Say>
     <% end %>
-  </Dial>
+  </Gather>
+  <Hangup/>
 </Response>

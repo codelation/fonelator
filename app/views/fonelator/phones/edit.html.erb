@@ -1,0 +1,5 @@
+<%= render partial: 'form' %>
+
+<p>
+  <%= link_to "List", phones_path %> | <%= link_to "Back", :back %> | <%= link_to "Delete", @phone, data: {confirm: "Are you sure?"}, method: :delete %>
+</p>

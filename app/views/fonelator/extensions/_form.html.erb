@@ -1,0 +1,25 @@
+<%= form_for @extension do |extension_form| %>
+  <% if @extension.errors.any? %>
+    <ul>
+      <% @extension.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <p>
+    <%= extension_form.label :name %>
+    <%= extension_form.text_field :name %>
+  </p>
+  <p>
+    <%= extension_form.label :number %>
+    <%= extension_form.text_field :number %>
+  </p>
+  <p>
+    <%= extension_form.label :is_listed, "Should this extension be listed in the oral directory?" %>
+    <%= extension_form.check_box :is_listed %>
+  </p>
+
+  <p>
+    <%= extension_form.submit 'Save' %>
+  </p>
+<% end %>

@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Ext</td>
+      <td>Name</td>
+      <td>Listed</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @extensions.each do |extension| %>
+      <tr>
+        <td><%= extension.id %></td>
+        <td><%= extension.number %></td>
+        <td><%= extension.name %></td>
+        <td><%= extension.is_listed %></td>
+        <td><%= link_to "Show", extension_path(extension) %> | <%= link_to "Edit", edit_extension_path(extension) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New", new_extension_path %>
