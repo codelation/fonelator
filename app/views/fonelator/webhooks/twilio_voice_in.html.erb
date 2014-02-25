@@ -12,7 +12,7 @@
       <Say voice="woman">For <%= listed_extension.name %> press <%= listed_extension.number %> followed by pound.</Say>
     <% end %>
   </Gather>
-  <% if Fonelator::Config.default_forwarding_number || Fonelator::Config.default_forwarding_sipsip %>
+  <% if Fonelator::Config.default_forwarding_number || Fonelator::Config.default_forwarding_sip %>
     <Dial>
       <% if Fonelator::Config.default_forwarding_number %>
         <Number><%= Fonelator::Config.default_forwarding_number] %></Number>
