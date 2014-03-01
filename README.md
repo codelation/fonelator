@@ -1,5 +1,7 @@
 # Fonelator
 
+[![Code Climate](https://codeclimate.com/github/codelation/fonelator.png)](https://codeclimate.com/github/codelation/fonelator)
+
 Fonelator is a mountable `Rails::Engine` that adds webhooks for 
 incoming and outgoing calls with [Twilio](https://www.twilio.com). It is a **BYOU**(bring your own user) engine that allows users to add numbers at which they would like to be available and tag those numbers with extensions, so one extension can dial multiple numbers. This is great for having extensions for things like "sales", "engineering", and "support" where a number of individuals could pick up depending on who's free.
 
